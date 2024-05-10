@@ -13,7 +13,7 @@ def image_b64(file_path):
       # Convert the image to base64
       image_base64 = base64.b64encode(f.read()).decode('utf-8')
     return image_base64
-b64_image = image_b64("image.jpg")
+b64_image = image_b64("screenshot.jpg")
 with open('key.txt', 'r') as file:
     api_key = file.read().strip().split('=')[1].strip()
 model = OpenAI(api_key=api_key)
@@ -30,7 +30,7 @@ response = model.chat.completions.create(
          },
          {
              "type": "text",
-             "text": "What is the image about?",
+             "text": "From the photo, how is the weather like in Cupertino?",
          }
      ]
     }
