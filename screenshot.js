@@ -30,7 +30,7 @@ import puppeteer from "puppeteer";
 
   await page.goto(url, {
     waitUntil: "networkidle0",
-    // timeout: timeout,
+    timeout: 10000,
   });
 
   await new Promise((r, _) => {
